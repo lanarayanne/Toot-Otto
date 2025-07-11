@@ -13,6 +13,7 @@ export default class GamePlayer{
         } else {
             throw new Error ("There are no more 'T' to be used");
         }
+        
     }
 
     useLetterO(){

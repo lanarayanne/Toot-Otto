@@ -1,5 +1,9 @@
 export default Object.freeze({
     EMPTY: "EMPTY",
-    PLAYER1: "PLAYER1",
-    PLAYER2: "PLAYER2"
+    LETTERT: "LETTERT",
+    LETTERO: "LETTERO",
+    // PLAYER1T: "PLAYER1T",
+    // PLAYER1O: "PLAYER1O",
+    // PLAYER2T: "PLAYER2T",
+    // PLAYER2O: "PLAYER2T"
 });
