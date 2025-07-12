@@ -62,13 +62,13 @@ td.column-hover {
 }
 
 td.letter-t {
-  color: var(--pink); 
-  text-shadow: 0 0 3px var(--pink);
+    color: var(--pink);
+    text-shadow: 0 0 3px var(--pink);
 }
 
 td.letter-o {
-  color: var(--yellow);
-  text-shadow: 0 0 5px var(--yellow);
+    color: var(--yellow);
+    text-shadow: 0 0 5px var(--yellow);
 }
 
 input {
@@ -131,7 +131,7 @@ p {
     color: var(--green);
     font-weight: bolder;
     font-size: 2rem;
-    margin:1rem;
+    margin: 1rem;
 
 }
 
@@ -150,3 +150,12 @@ p {
     font-weight: bold;
 }
 
+.button input.deselected {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.button input.deselected:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

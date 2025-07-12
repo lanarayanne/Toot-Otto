@@ -19,11 +19,20 @@ class Interface {
 
         letterTButton.onclick = () => {
             this.selectedLetter = Letter.LETTERT;
+            letterTButton.classList.remove('deselected');
+            letterOButton.classList.add('deselected');
         }
 
         letterOButton.onclick = () => {
             this.selectedLetter = Letter.LETTERO;
+            letterOButton.classList.remove('deselected');
+            letterTButton.classList.add('deselected');
         }
+    }
+
+    resetButtonStyles() {
+        document.getElementById("letterT").classList.remove('deselected');
+        document.getElementById("letterO").classList.remove('deselected');
     }
 
     init() {
@@ -46,12 +55,13 @@ class Interface {
         this.changeMessage();
         this.showQuant();
         this.addHover();
+        this.resetButtonStyles();
     }
 
     addHover() {
         const tbody = document.querySelector("tbody");
 
-        if (!tbody) return; 
+        if (!tbody) return;
 
         tbody.addEventListener("mouseover", (event) => {
             if (event.target.tagName === "TD") {
@@ -135,6 +145,7 @@ class Interface {
             finalCell.textContent = letter === Letter.LETTERT ? "T" : "O";
             letter === Letter.LETTERT ? finalCell.classList.add('letter-t') : finalCell.classList.add('letter-o');
             this.selectedLetter = null;
+            this.resetButtonStyles();
             this.changeMessage();
             this.showQuant();
         }
