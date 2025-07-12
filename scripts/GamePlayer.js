@@ -1,5 +1,3 @@
-import Player from "./Player.js";
-
 export default class GamePlayer{
     constructor(player){
         this.player = player
@@ -17,8 +15,8 @@ export default class GamePlayer{
     }
 
     useLetterO(){
-        if(this.quantT > 0){
-            this.quantT--;
+        if(this.quantO > 0){
+            this.quantO--;
         } else {
             throw new Error ("There are no more 'O' to be used");
         }

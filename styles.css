@@ -1,11 +1,9 @@
 :root {
-    --roxo: #210124;
-    --rosa: #EC5766;
-    /* --verde: #B3DEC1; */
-    --verde: #80ED99;
-    --azul: #DBF9F0;
-    --branco: #F7F9F7;
-    --amarelo: #E5D352;
+    --purple: #210124;
+    --pink: #EC5766;
+    --green: #80ED99;
+    --blue: #DBF9F0;
+    --yellow: #E5D352;
 }
 
 html {
@@ -13,7 +11,7 @@ html {
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: var(--roxo);
+    background-color: var(--purple);
 }
 
 * {
@@ -30,8 +28,8 @@ main {
 
 h1 {
     font-size: 4rem;
-    color: var(--verde);
-    text-shadow: 0px 0px 5px var(--verde);
+    color: var(--green);
+    text-shadow: 0px 0px 5px var(--green);
 
 }
 
@@ -42,7 +40,6 @@ table {
 
 form {
     margin: auto;
-    width: 467px;
 }
 
 td {
@@ -53,8 +50,8 @@ td {
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--verde);
-    text-shadow: 0px 0px 3px var(--verde);
+    color: var(--green);
+    text-shadow: 0px 0px 3px var(--green);
     border-radius: 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
@@ -65,13 +62,13 @@ td.column-hover {
 }
 
 td.letter-t {
-  color: var(--rosa); /* T ficará verde */
-  text-shadow: 0 0 3px var(--rosa);
+  color: var(--pink); 
+  text-shadow: 0 0 3px var(--pink);
 }
 
 td.letter-o {
-  color: var(--amarelo);
-  text-shadow: 0 0 5px var(--amarelo);
+  color: var(--yellow);
+  text-shadow: 0 0 5px var(--yellow);
 }
 
 input {
@@ -82,7 +79,7 @@ input {
     height: 30px;
     font-weight: 700;
     font-size: 2rem;
-    color: var(--roxo);
+    color: var(--purple);
 }
 
 .button {
@@ -93,20 +90,19 @@ input {
 }
 
 #start {
-    /* margin-left: auto; */
     width: 95px;
-    background-color: var(--verde);
-    box-shadow: 0px 0px 4px var(--verde);
+    background-color: var(--green);
+    box-shadow: 0px 0px 4px var(--green);
 }
 
 #letterT {
-    background-color: var(--rosa);
-    box-shadow: 0px 0px 4px var(--rosa);
+    background-color: var(--pink);
+    box-shadow: 0px 0px 4px var(--pink);
 }
 
 #letterO {
-    background-color: var(--amarelo);
-    box-shadow: 0px 0px 4px var(--amarelo);
+    background-color: var(--yellow);
+    box-shadow: 0px 0px 4px var(--yellow);
 }
 
 p {
@@ -132,25 +128,25 @@ p {
 }
 
 #message {
-    color: var(--verde);
+    color: var(--green);
     font-weight: bolder;
     font-size: 2rem;
-    margin:auto;
+    margin:1rem;
 
 }
 
 .info p:first-child {
-    color: var(--verde);
+    color: var(--green);
     font-weight: bolder;
 }
 
 .info p:nth-child(2) {
-    color: var(--rosa);
+    color: var(--pink);
     font-weight: bold;
 }
 
 .info p:nth-child(3) {
-    color: var(--amarelo);
+    color: var(--yellow);
     font-weight: bold;
 }
 

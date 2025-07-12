@@ -1,6 +1,5 @@
 import Player from "./Player.js";
 import TootOtto from "./TootOtto.js";
-import Cell from "./Cell.js";
 import Winner from "./Winner.js";
 import Letter from "./Letter.js"
 
@@ -75,9 +74,6 @@ class Interface {
         });
     }
 
-    coordinades(col) {
-        return col.cellIndex;
-    }
 
     setMessage(message) {
         const p = document.getElementById("message");
@@ -127,7 +123,7 @@ class Interface {
             return;
         }
 
-        let col = this.coordinades(td);
+        let col = td.cellIndex;
 
         try {
             let moveResult = this.game.move(col, letter);

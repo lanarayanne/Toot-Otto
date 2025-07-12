@@ -1,4 +1,3 @@
-
 import Winner from "./Winner.js";
 import CellState from "./CellState.js";
 import GamePlayer from "./GamePlayer.js";
@@ -9,7 +8,6 @@ import Letter from "./Letter.js"
 export default class TootOtto {
     constructor(player) {
         this.turn = player;
-        this.letter;
         this.rows = 4;
         this.cols = 6;
         this.board = [];
@@ -37,23 +35,18 @@ export default class TootOtto {
         return this.turn;
     }
 
-    inLimit(value, limit) {
-        return (value >= 0 && value < limit)
-    }
-
-    onBoard({ x, y }) {
-        return (this.inLimit(x, this.rows) && this.inLimit(y, this.cols));
-    }
-
-
     move(col, letter) {
         let player = (this.turn === Player.PLAYER1) ? this.player1 : this.player2;
 
         if (this.colHight[col] < 0) {
             throw new Error("Column is full");
         }
-        if ((letter === Letter.LETTERT && player.quantT <= 0) || (Letter.LETTERO && player.quantO <= 0)) {
-            throw new Error(`There are no more '${letter}' pieces to be used`);
+
+        if (letter === Letter.LETTERT && player.quantT <= 0) {
+            throw new Error(`There are no more 'T' pieces to be used`);
+        }
+        if (letter === Letter.LETTERO && player.quantO <= 0) {
+            throw new Error(`There are no more 'O' pieces to be used`);
         }
 
         let row = this.colHight[col];
@@ -191,6 +184,4 @@ export default class TootOtto {
 
         return Winner.NONE;
     }
-
-
 }
