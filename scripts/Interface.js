@@ -46,6 +46,33 @@ class Interface {
 
         this.changeMessage();
         this.showQuant();
+        this.addHover();
+    }
+
+    addHover() {
+        const tbody = document.querySelector("tbody");
+
+        if (!tbody) return; 
+
+        tbody.addEventListener("mouseover", (event) => {
+            if (event.target.tagName === "TD") {
+                const colIndex = event.target.cellIndex;
+
+                for (const row of tbody.rows) {
+                    row.children[colIndex].classList.add("column-hover");
+                }
+            }
+        });
+
+        tbody.addEventListener("mouseout", (event) => {
+            if (event.target.tagName === "TD") {
+                const colIndex = event.target.cellIndex;
+
+                for (const row of tbody.rows) {
+                    row.children[colIndex].classList.remove("column-hover");
+                }
+            }
+        });
     }
 
     coordinades(col) {
@@ -63,10 +90,10 @@ class Interface {
         const quantO1 = document.getElementById("quantO1");
         const quantT2 = document.getElementById("quantT2");
         const quantO2 = document.getElementById("quantO2");
-        quantT1.textContent = `Quantidade T: ${this.game.player1.quantT}`;
-        quantO1.textContent = `Quantidade O: ${this.game.player1.quantO}`;
-        quantT2.textContent = `Quantidade T: ${this.game.player2.quantT}`;
-        quantO2.textContent = `Quantidade O: ${this.game.player2.quantO}`;
+        quantT1.textContent = `T: ${this.game.player1.quantT}`;
+        quantO1.textContent = `O: ${this.game.player1.quantO}`;
+        quantT2.textContent = `T: ${this.game.player2.quantT}`;
+        quantO2.textContent = `O: ${this.game.player2.quantO}`;
     }
 
     changeMessage() {
@@ -101,7 +128,7 @@ class Interface {
         }
 
         let col = this.coordinades(td);
-        
+
         try {
             let moveResult = this.game.move(col, letter);
             let position = moveResult.position;
@@ -110,12 +137,13 @@ class Interface {
             let finalCell = finalRow.children[position.col];
 
             finalCell.textContent = letter === Letter.LETTERT ? "T" : "O";
+            letter === Letter.LETTERT ? finalCell.classList.add('letter-t') : finalCell.classList.add('letter-o');
             this.selectedLetter = null;
             this.changeMessage();
             this.showQuant();
-        } 
-        
-        catch (err){
+        }
+
+        catch (err) {
             this.setMessage(err.message);
 
         }
